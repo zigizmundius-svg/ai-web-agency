@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f6f3">
+<title>AI Web Agency — панель управления</title>
+<style>
+:root{--bg:#f5f6f3;--panel:#fff;--ink:#20251f;--muted:#7b8378;--line:#e8ebe4;--green:#c8ee75;--green2:#eff8dc;--dark:#273027;--blue:#e8f0ff;--orange:#fff1e5;--shadow:0 16px 50px rgba(31,42,29,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:250px 1fr}.sidebar{background:#202820;color:#f5f7f1;padding:26px 18px;display:flex;flex-direction:column;gap:28px}.brand{display:flex;align-items:center;gap:11px;padding:0 10px;font-size:16px;font-weight:850;letter-spacing:-.04em}.brandmark{width:34px;height:34px;border-radius:11px;background:var(--green);color:#202820;display:grid;place-items:center;font-size:18px}.side-label{font-size:10px;letter-spacing:.15em;color:#899487;text-transform:uppercase;padding:0 12px;margin-bottom:8px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#c0c8bd;text-align:left;padding:12px;border-radius:11px;display:flex;gap:12px;align-items:center;font-size:13px}.nav button:hover,.nav button.active{background:#354035;color:white}.nav .ico{width:20px;text-align:center;font-size:16px}.side-bottom{margin-top:auto;border-top:1px solid #3b463b;padding:18px 10px 0;color:#aab4a6;font-size:11px;line-height:1.7}.side-bottom strong{display:block;color:#eff4e9;font-size:12px}.main{min-width:0}.topbar{height:76px;background:rgba(255,255,255,.78);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 36px;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}.crumb{color:var(--muted);font-size:12px}.top-right{display:flex;align-items:center;gap:18px}.demo{background:#fff4df;color:#92621d;border-radius:999px;padding:7px 11px;font-size:10px;font-weight:800;letter-spacing:.06em}.avatar{width:35px;height:35px;border-radius:50%;background:var(--green2);display:grid;place-items:center;font-weight:800}.content{max-width:1420px;margin:auto;padding:34px 36px 60px}.page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:28px}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}h1{font-size:32px;letter-spacing:-.06em;line-height:1.1;margin:8px 0 6px}.sub{color:var(--muted);font-size:13px}.btn{border:0;border-radius:10px;padding:12px 16px;background:var(--dark);color:white;font-weight:750;font-size:12px}.btn:hover{background:#40503d}.btn-green{background:var(--green);color:#202820}.btn-green:hover{background:#d8f5a0;color:#202820}.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 2px 10px rgba(20,30,20,.02)}.stat{padding:20px}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.stat-icon{width:31px;height:31px;border-radius:10px;background:var(--green2);display:grid;place-items:center}.stat-num{font-size:29px;letter-spacing:-.06em;font-weight:850;margin:15px 0 3px}.stat-foot{font-size:10px;color:var(--muted)}.stat-foot em{color:#4f8b36;font-style:normal;font-weight:800}.grid-main{display:grid;grid-template-columns:1.45fr .85fr;gap:16px;margin-bottom:16px}.card{padding:22px}.card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.card h2{font-size:15px;letter-spacing:-.03em;margin:0}.muted{color:var(--muted);font-size:11px}.project-list{display:grid;gap:10px}.project{border:1px solid var(--line);border-radius:13px;padding:14px;display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:13px}.project-logo{width:42px;height:42px;border-radius:12px;background:#eef2e8;display:grid;place-items:center;font-size:17px;font-weight:900}.project:nth-child(2) .project-logo{background:#fff0e6}.project:nth-child(3) .project-logo{background:#eaf0ff}.project-name{font-size:12px;font-weight:800}.project-meta{font-size:10px;color:var(--muted);margin-top:3px}.status{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 9px;background:#edf7e7;color:#4c7a35;font-size:9px;font-weight:800;white-space:nowrap}.status:before{content:"";width:6px;height:6px;background:#78b64e;border-radius:50%}.status.draft{background:#fff4e5;color:#a36c23}.status.draft:before{background:#d9a34b}.activity{display:grid;gap:17px}.activity-item{display:grid;grid-template-columns:28px 1fr;gap:10px}.activity-icon{width:28px;height:28px;border-radius:9px;background:#f0f2ed;display:grid;place-items:center;font-size:12px}.activity-text{font-size:11px;line-height:1.45}.activity-text span{display:block;color:var(--muted);font-size:10px;margin-top:3px}.module-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.module{border:1px solid var(--line);border-radius:13px;padding:16px;display:flex;align-items:center;gap:12px}.module-icon{width:37px;height:37px;flex:none;border-radius:11px;background:#f0f3eb;display:grid;place-items:center;font-size:17px}.module strong{font-size:11px;display:block}.module small{font-size:9px;color:var(--muted)}.view{display:none}.view.active{display:block}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:580px}th,td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line);font-size:11px}th{color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.1em}td strong{font-size:11px}.empty{padding:34px;text-align:center;color:var(--muted);font-size:12px}.module-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}.module-row:last-child{border:0}.switch{width:42px;height:24px;border:0;border-radius:99px;background:#dfe3dc;padding:3px;transition:.2s}.switch:after{content:"";display:block;width:18px;height:18px;border-radius:50%;background:white;transition:.2s}.switch.on{background:#8dbd51}.switch.on:after{transform:translateX(18px)}.notice{background:#f2f6e9;border:1px solid #e2ebd3;padding:14px 16px;border-radius:12px;color:#5d6c4c;font-size:11px;line-height:1.6;margin-top:16px}.modal-backdrop{position:fixed;inset:0;background:rgba(17,24,17,.45);display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal-backdrop.open{display:flex}.modal{width:min(460px,100%);background:white;border-radius:18px;padding:25px;box-shadow:var(--shadow)}.modal h2{margin:0 0 5px;font-size:20px}.modal p{margin:0 0 20px;color:var(--muted);font-size:12px}.field{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;outline:none}.field:focus{border-color:#9ab66d}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:8px}.mobile-menu{display:none}
+@media(max-width:1050px){.stats{grid-template-columns:repeat(2,1fr)}.module-grid{grid-template-columns:repeat(2,1fr)}.grid-main{grid-template-columns:1fr}}
+@media(max-width:700px){.app{grid-template-columns:1fr}.sidebar{position:fixed;z-index:15;inset:0 auto 0 0;width:250px;transform:translateX(-102%);transition:.25s;box-shadow:var(--shadow)}.sidebar.open{transform:translateX(0)}.mobile-menu{display:inline-grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:10px;background:white;margin-right:10px}.topbar{padding:0 16px;height:64px}.content{padding:24px 16px 40px}.page-head{align-items:flex-start;flex-direction:column}.page-head .btn{width:100%}h1{font-size:27px}.stats{gap:9px}.stat{padding:14px}.stat-num{font-size:25px}.card{padding:16px}.module-grid{grid-template-columns:1fr 1fr}.project{grid-template-columns:38px 1fr}.project .status{grid-column:2;justify-self:start}.demo{font-size:8px}.top-right{gap:9px}}
+@media(max-width:390px){.module-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat-top{font-size:10px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><span class="brandmark">A</span><span>AI WEB AGENCY</span></div>
+  <div><div class="side-label">Рабочее пространство</div><nav class="nav" id="nav">
+    <button class="active" data-view="overview"><span class="ico">▦</span>Обзор</button>
+    <button data-view="projects"><span class="ico">▣</span>Проекты</button>
+    <button data-view="clients"><span class="ico">♙</span>Клиенты</button>
+    <button data-view="modules"><span class="ico">◈</span>Модули платформы</button>
+    <button data-view="billing"><span class="ico">₽</span>Тарифы и подписки</button>
+    <button data-view="settings"><span class="ico">⚙</span>Настройки</button>
+  </nav></div>
+  <div class="side-bottom"><strong>Панель агентства</strong>Демонстрационный интерфейс · версия 0.1<br>Данные пока тестовые</div>
+</aside>
+<main class="main">
+  <header class="topbar"><div><button class="mobile-menu" id="mobileMenu" aria-label="Открыть меню">☰</button><span class="crumb">Рабочее пространство / <b id="crumb">Обзор</b></span></div><div class="top-right"><span class="demo">DEMO MODE</span><div class="avatar">A</div></div></header>
+  <div class="content">
+    <section class="view active" id="view-overview">
+      <div class="page-head"><div><div class="eyebrow">Панель управления агентством</div><h1>Добро пожаловать</h1><div class="sub">Здесь собраны проекты, клиенты и состояние платформы.</div></div><button class="btn btn-green" id="addProjectTop">＋ Новый проект</button></div>
+      <div class="stats">
+        <div class="stat"><div class="stat-top">Всего проектов <span class="stat-icon">▣</span></div><div class="stat-num" id="statProjects">3</div><div class="stat-foot">Сайты в рабочем пространстве</div></div>
+        <div class="stat"><div class="stat-top">Клиенты <span class="stat-icon">♙</span></div><div class="stat-num" id="statClients">3</div><div class="stat-foot">Демо-клиенты</div></div>
+        <div class="stat"><div class="stat-top">Активные модули <span class="stat-icon">◈</span></div><div class="stat-num" id="statModules">2</div><div class="stat-foot">Включены в демонстрации</div></div>
+        <div class="stat"><div class="stat-top">Ежемесячная выручка <span class="stat-icon">₽</span></div><div class="stat-num">0 ₽</div><div class="stat-foot">Оплата пока не подключена</div></div>
+      </div>
+      <div class="grid-main">
+        <div class="card"><div class="card-head"><h2>Последние проекты</h2><button class="btn btn-ghost" data-go="projects">Все проекты ↗</button></div><div class="project-list" id="projectList"></div></div>
+        <div class="card"><div class="card-head"><h2>Последние события</h2><span class="muted">Демо-лента</span></div><div class="activity">
+          <div class="activity-item"><div class="activity-icon">↗</div><div class="activity-text">Создан демонстрационный сайт GARAGE 27<span>Проект · Автосервис</span></div></div>
+          <div class="activity-item"><div class="activity-icon">◈</div><div class="activity-text">Подготовлена структура универсального шаблона<span>Платформа · Шаблоны</span></div></div>
+          <div class="activity-item"><div class="activity-icon">✓</div><div class="activity-text">Подключён GitHub для работы с кодом<span>Интеграции · GitHub</span></div></div>
+        </div></div>
+      </div>
+      <div class="card"><div class="card-head"><h2>Модули платформы</h2><button class="btn btn-ghost" data-go="modules">Управление ↗</button></div><div class="module-grid">
+        <div class="module"><div class="module-icon">🌐</div><div><strong>Управление сайтом</strong><small>Контент и страницы</small></div></div>
+        <div class="module"><div class="module-icon">▤</div><div><strong>CRM</strong><small>Клиенты и обращения</small></div></div>
+        <div class="module"><div class="module-icon">▦</div><div><strong>Онлайн-запись</strong><small>Календарь и слоты</small></div></div>
+        <div class="module"><div class="module-icon">♧</div><div><strong>Сотрудники</strong><small>Команда и расписание</small></div></div>
+      </div></div>
+      <div class="notice"><b>Важно:</b> это интерактивный макет панели. Пока он не подключён к серверу и базе данных. Нельзя использовать его для хранения реальных клиентов, паролей или заявок. Следующий этап — безопасная авторизация и серверная база.</div>
+    </section>
+
+    <section class="view" id="view-projects">
+      <div class="page-head"><div><div class="eyebrow">Управление сайтами</div><h1>Проекты</h1><div class="sub">Каждый бизнес — отдельный проект со своими настройками и модулями.</div></div><button class="btn btn-green" id="addProject">＋ Новый проект</button></div>
+      <div class="card"><div class="card-head"><h2>Все проекты</h2><span class="muted" id="projectCount">3 проекта</span></div><div class="table-wrap"><table><thead><tr><th>Проект</th><th>Ниша</th><th>Статус</th><th>Адрес</th><th>Владелец</th></tr></thead><tbody id="projectTable"></tbody></table></div></div>
+    </section>
+
+    <section class="view" id="view-clients">
+      <div class="page-head"><div><div class="eyebrow">Контакты и доступы</div><h1>Клиенты</h1><div class="sub">В дальнейшем здесь будут владельцы бизнесов, пользователи и история взаимодействия.</div></div></div>
+      <div class="card"><div class="card-head"><h2>Клиентская база</h2><span class="muted">Тестовые данные</span></div><div class="table-wrap"><table><thead><tr><th>Клиент</th><th>Компания</th><th>Проект</th><th>Доступ</th></tr></thead><tbody>
+      <tr><td><strong>Владелец GARAGE 27</strong></td><td>GARAGE 27</td><td>Автосервис</td><td><span class="status draft">Не создан</span></td></tr>
+      <tr><td><strong>Клиент FORMA</strong></td><td>FORMA</td><td>Универсальный шаблон</td><td><span class="status draft">Не создан</span></td></tr>
+      <tr><td><strong>Владелец агентства</strong></td><td>AI Web Agency</td><td>Сайт агентства</td><td><span class="status draft">Текущий макет</span></td></tr>
+      </tbody></table></div></div>
+    </section>
+
+    <section class="view" id="view-modules">
+      <div class="page-head"><div><div class="eyebrow">Функциональность платформы</div><h1>Модули платформы</h1><div class="sub">Единая основа, а функции подключаются под тип бизнеса.</div></div></div>
+      <div class="card">
+        <div class="module-row"><div class="module"><div class="module-icon">🌐</div><div><strong>Редактор сайта</strong><small>Страницы, тексты, изображения, SEO</small></div></div><button class="switch on" aria-label="Редактор сайта включён"></button></div>
+        <div class="module-row"><div class="module"><div class="module-icon">▤</div><div><strong>CRM и заявки</strong><small>Контакты, обращения, статусы, история</small></div></div><button class="switch on" aria-label="CRM включена"></button></div>
+        <div class="module-row"><div class="module"><div class="module-icon">▦</div><div><strong>Онлайн-запись и календарь</strong><small>Свободные слоты, переносы, отмены</small></div></div><button class="switch" aria-label="Онлайн-запись выключена"></button></div>
+        <div class="module-row"><div class="module"><div class="module-icon">♧</div><div><strong>Сотрудники и роли</strong><small>Права, графики, назначение исполнителей</small></div></div><button class="switch" aria-label="Сотрудники выключены"></button></div>
+        <div class="module-row"><div class="module"><div class="module-icon">▥</div><div><strong>Склад и товары</strong><small>Остатки, каталог, позиции</small></div></div><button class="switch" aria-label="Склад выключен"></button></div>
+        <div class="module-row"><div class="module"><div class="module-icon">⌁</div><div><strong>Уведомления</strong><small>Email, SMS и мессенджеры — по выбору клиента</small></div></div><button class="switch" aria-label="Уведомления выключены"></button></div>
+      </div>
+      <div class="notice">Переключатели сейчас демонстрационные. В рабочей системе права и доступность модулей будут проверяться сервером, а не только интерфейсом.</div>
+    </section>
+
+    <section class="view" id="view-billing">
+      <div class="page-head"><div><div class="eyebrow">Регулярная модель дохода</div><h1>Тарифы и подписки</h1><div class="sub">Подписки будут включать платформу, хостинг, поддержку и выбранные функции.</div></div></div>
+      <div class="module-grid">
+        <div class="card"><div class="eyebrow">Старт</div><h2 style="font-size:23px;margin:12px 0">от 2 900 ₽<small class="muted"> / мес.</small></h2><p class="muted">Сайт и базовое управление контентом.</p></div>
+        <div class="card"><div class="eyebrow">Бизнес</div><h2 style="font-size:23px;margin:12px 0">от 5 900 ₽<small class="muted"> / мес.</small></h2><p class="muted">Сайт, CRM, заявки и дополнительные модули.</p></div>
+        <div class="card"><div class="eyebrow">Профи</div><h2 style="font-size:23px;margin:12px 0">от 9 900 ₽<small class="muted"> / мес.</small></h2><p class="muted">Расширенная автоматизация и поддержка.</p></div>
+        <div class="card"><div class="eyebrow">Индивидуально</div><h2 style="font-size:23px;margin:12px 0">По задаче</h2><p class="muted">Особые процессы, интеграции и кастомные модули.</p></div>
+      </div>
+      <div class="notice">Это предварительные тестовые цены для обсуждения модели, не утверждённый прайс. Приём платежей, договоры и автоматическое продление ещё не реализованы.</div>
+    </section>
+
+    <section class="view" id="view-settings">
+      <div class="page-head"><div><div class="eyebrow">Параметры системы</div><h1>Настройки</h1><div class="sub">Интеграции и системные параметры платформы.</div></div></div>
+      <div class="card">
+        <div class="module-row"><div><strong>GitHub</strong><div class="muted">Хранение исходного кода</div></div><span class="status">Подключён</span></div>
+        <div class="module-row"><div><strong>Хостинг сайтов</strong><div class="muted">Провайдер будет выбран после проверки российских условий</div></div><span class="status draft">Не выбран</span></div>
+        <div class="module-row"><div><strong>База данных</strong><div class="muted">PostgreSQL в российском дата-центре</div></div><span class="status draft">Не создана</span></div>
+        <div class="module-row"><div><strong>Авторизация и роли</strong><div class="muted">Вход агентства, владельцев и сотрудников клиентов</div></div><span class="status draft">Не реализовано</span></div>
+      </div>
+    </section>
+  </div>
+</main>
+</div>
+
+<div class="modal-backdrop" id="modal">
+  <div class="modal">
+    <h2>Новый проект</h2><p>Добавим тестовую карточку проекта в этот макет.</p>
+    <input class="field" id="newName" placeholder="Название бизнеса" maxlength="60">
+    <select class="field" id="newType"><option>Автосервис</option><option>Салон красоты</option><option>Спортивная секция</option><option>Магазин</option><option>Другое</option></select>
+    <input class="field" id="newOwner" placeholder="Имя владельца (необязательно)" maxlength="60">
+    <div class="modal-actions"><button class="btn btn-ghost" id="cancelModal">Отмена</button><button class="btn btn-green" id="saveProject">Создать проект</button></div>
+  </div>
+</div>
+<script>
+const initialProjects=[
+ {name:"AI Web Agency",type:"Агентство",owner:"Внутренний проект",url:"ai-web-agency.vercel.app",mark:"A",status:"Активен"},
+ {name:"GARAGE 27",type:"Автосервис",owner:"Демо-клиент",url:"demo-auto-service",mark:"G",status:"Демо"},
+ {name:"FORMA",type:"Универсальный шаблон",owner:"Демо-клиент",url:"universal-site-template.vercel.app",mark:"F",status:"Шаблон"}
+];
+let projects=[...initialProjects];
+const $=id=>document.getElementById(id);
+function renderProjects(){
+ $("projectList").innerHTML=projects.slice(0,4).map(p=>`<div class="project"><div class="project-logo">${escapeHtml(p.mark)}</div><div><div class="project-name">${escapeHtml(p.name)}</div><div class="project-meta">${escapeHtml(p.type)} · ${escapeHtml(p.url)}</div></div><span class="status ${p.status==="Демо"||p.status==="Шаблон"?"draft":""}">${escapeHtml(p.status)}</span></div>`).join("");
+ $("projectTable").innerHTML=projects.map(p=>`<tr><td><strong>${escapeHtml(p.name)}</strong></td><td>${escapeHtml(p.type)}</td><td><span class="status ${p.status==="Демо"||p.status==="Шаблон"?"draft":""}">${escapeHtml(p.status)}</span></td><td>${escapeHtml(p.url)}</td><td>${escapeHtml(p.owner)}</td></tr>`).join("");
+ $("statProjects").textContent=projects.length;
+ $("projectCount").textContent=projects.length+" проекта(ов)";
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function showView(name){
+ document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id==="view-"+name));
+ document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===name));
+ const labels={overview:"Обзор",projects:"Проекты",clients:"Клиенты",modules:"Модули платформы",billing:"Тарифы и подписки",settings:"Настройки"};
+ $("crumb").textContent=labels[name]||"Обзор";$("sidebar").classList.remove("open");window.scrollTo({top:0,behavior:"smooth"});
+}
+$("nav").addEventListener("click",e=>{const b=e.target.closest("button[data-view]");if(b)showView(b.dataset.view)});
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.go)));
+$("mobileMenu").addEventListener("click",()=>$("sidebar").classList.toggle("open"));
+const openModal=()=>{$("modal").classList.add("open");$("newName").focus()};
+const closeModal=()=>{$("modal").classList.remove("open");$("newName").value="";$("newOwner").value=""};
+$("addProject").addEventListener("click",openModal);$("addProjectTop").addEventListener("click",openModal);
+$("cancelModal").addEventListener("click",closeModal);
+$("modal").addEventListener("click",e=>{if(e.target===$("modal"))closeModal()});
+$("saveProject").addEventListener("click",()=>{
+ const name=$("newName").value.trim();if(!name){$("newName").focus();return}
+ const type=$("newType").value;const owner=$("newOwner").value.trim()||"Не указан";
+ projects.unshift({name,type,owner,url:"Будет назначен",mark:name.slice(0,1).toUpperCase(),status:"Черновик"});
+ renderProjects();closeModal();showView("projects");
+});
+document.querySelectorAll(".switch").forEach(btn=>btn.addEventListener("click",()=>{
+ btn.classList.toggle("on");btn.setAttribute("aria-pressed",String(btn.classList.contains("on")));
+}));
+renderProjects();
+</script>
+</body>
+</html>
