@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f7f2">
+<title>AI Web Agency — сайты и цифровые решения</title>
+<meta name="description" content="Создание современных сайтов, цифровых продуктов и автоматизация бизнеса с помощью искусственного интеллекта.">
+<style>
+:root {
+  --bg:#f7f7f2;
+  --text:#20231f;
+  --muted:#777d73;
+  --accent:#a5d66b;
+  --line:#e5e8df;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial, sans-serif;
+  line-height:1.5;
+}
+a {color:inherit;text-decoration:none}
+.wrap {width:min(1160px,90%);margin:auto}
+header {
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+}
+.logo {font-size:20px;font-weight:800;letter-spacing:-1px}
+.logo span {color:#78a944}
+nav {display:flex;gap:30px;font-size:14px;color:var(--muted)}
+.nav-btn {
+  padding:12px 20px;
+  background:var(--text);
+  color:white;
+  border-radius:30px;
+  font-size:13px;
+}
+.hero {
+  padding:110px 0 100px;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:60px;
+  align-items:center;
+}
+.eyebrow {
+  color:#6b963d;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+}
+h1 {
+  font-size:clamp(46px,7vw,82px);
+  line-height:1.03;
+  letter-spacing:-5px;
+  max-width:760px;
+}
+h1 span {color:#83ae50}
+.hero-text {
+  margin-top:28px;
+  max-width:520px;
+  color:var(--muted);
+  font-size:18px;
+}
+.actions {display:flex;gap:14px;margin-top:35px;flex-wrap:wrap}
+.btn {
+  display:inline-block;
+  padding:16px 24px;
+  border-radius:40px;
+  font-size:14px;
+  font-weight:700;
+}
+.btn-main {background:var(--text);color:white}
+.btn-light {border:1px solid var(--line)}
+.visual {
+  min-height:370px;
+  border-radius:28px;
+  background:#e9efdf;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  overflow:hidden;
+}
+.visual-label {font-size:12px;color:#68765a}
+.visual-card {
+  background:white;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 15px 40px #536b3212;
+}
+.visual-card small {color:var(--muted)}
+.visual-card h3 {font-size:30px;line-height:1.1;margin:15px 0}
+.visual-line {height:7px;background:#e9eee3;border-radius:10px;margin-top:12px}
+.visual-line.short {width:65%}
+.visual-circle {
+  width:90px;height:90px;
+  background:var(--accent);
+  border-radius:50%;
+  align-self:flex-end;
+  margin-top:20px;
+}
+section {padding:85px 0}
+.section-head {max-width:650px;margin-bottom:42px}
+.section-head h2 {
+  font-size:clamp(34px,5vw,52px);
+  letter-spacing:-2px;
+  line-height:1.1;
+}
+.section-head p {color:var(--muted);margin-top:16px}
+.services {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.service {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:30px;
+  min-height:230px;
+}
+.number {font-size:13px;color:#83ae50;font-weight:bold}
+.service h3 {font-size:22px;margin:35px 0 12px}
+.service p {font-size:14px;color:var(--muted)}
+.process {
+  background:#20231f;
+  color:white;
+}
+.process .section-head p {color:#b9c0b3}
+.steps {display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+.step {border-top:1px solid #555b50;padding-top:20px}
+.step b {color:var(--accent);font-size:13px}
+.step h3 {margin:22px 0 10px;font-size:20px}
+.step p {font-size:14px;color:#b9c0b3}
+.contact {
+  background:#e9efdf;
+  border-radius:28px;
+  padding:65px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+}
+.contact h2 {font-size:clamp(34px,5vw,52px);line-height:1.1;letter-spacing:-2px}
+.contact p {color:var(--muted);margin-top:15px}
+footer {
+  padding:35px 0;
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:13px;
+}
+@media(max-width:750px) {
+  nav {display:none}
+  .hero {grid-template-columns:1fr;padding:75px 0}
+  h1 {letter-spacing:-3px}
+  .visual {min-height:300px}
+  .services {grid-template-columns:1fr}
+  .steps {grid-template-columns:1fr 1fr;gap:30px}
+  .contact {padding:35px 25px;flex-direction:column;align-items:flex-start}
+  footer {gap:15px;flex-direction:column}
+}
+@media(max-width:420px) {
+  .steps {grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a href="#" class="logo">AI<span>.</span>WEB AGENCY</a>
+  <nav>
+    <a href="#services">Услуги</a>
+    <a href="#process">Как работаем</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+  <a href="#contact" class="nav-btn">Обсудить проект</a>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="eyebrow">Digital production / AI technology</div>
+    <h1>Ваш бизнес.<br>Новые <span>возможности.</span></h1>
+    <p class="hero-text">
+      Создаём современные сайты и цифровые решения,
+      которые помогают бизнесу привлекать клиентов,
+      работать эффективнее и расти.
+    </p>
+    <div class="actions">
+      <a href="#contact" class="btn btn-main">Обсудить проект ↗</a>
+      <a href="#services" class="btn btn-light">Наши услуги</a>
+    </div>
+  </div>
+  <div class="visual">
+    <div class="visual-label">IDEAS INTO DIGITAL PRODUCTS</div>
+    <div>
+      <div class="visual-card">
+        <small>НОВЫЙ ЦИФРОВОЙ ПРОДУКТ</small>
+        <h3>От идеи<br>до запуска.</h3>
+        <div class="visual-line"></div>
+        <div class="visual-line short"></div>
+      </div>
+      <div class="visual-circle"></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <div class="eyebrow">Что мы делаем</div>
+    <h2>Инструменты для развития бизнеса</h2>
+    <p>От первого сайта до комплексной цифровой системы.</p>
+  </div>
+  <div class="services">
+    <article class="service">
+      <div class="number">01 / WEB</div>
+      <h3>Создание сайтов</h3>
+      <p>Лендинги, сайты компаний, каталоги и адаптивные страницы для любых устройств.</p>
+    </article>
+    <article class="service">
+      <div class="number">02 / AI</div>
+      <h3>ИИ-решения</h3>
+      <p>Использование искусственного интеллекта для создания контента и оптимизации процессов.</p>
+    </article>
+    <article class="service">
+      <div class="number">03 / AUTOMATION</div>
+      <h3>Автоматизация</h3>
+      <p>Telegram-боты, формы заявок, интеграции и инструменты обработки обращений.</p>
+    </article>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="section-head">
+    <div class="eyebrow">Наш подход</div>
+    <h2>От задачи к работающему решению</h2>
+    <p>Понятный процесс без лишних этапов и ненужных усложнений.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <b>01</b>
+      <h3>Изучаем</h3>
+      <p>Разбираемся в бизнесе, аудитории и задачах.</p>
+    </div>
+    <div class="step">
+      <b>02</b>
+      <h3>Проектируем</h3>
+      <p>Продумываем структуру, содержание и визуальную концепцию.</p>
+    </div>
+    <div class="step">
+      <b>03</b>
+      <h3>Создаём</h3>
+      <p>Разрабатываем, тестируем и проверяем результат.</p>
+    </div>
+    <div class="step">
+      <b>04</b>
+      <h3>Запускаем</h3>
+      <p>Публикуем проект и готовим его к работе.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div>
+      <div class="eyebrow">Начнём с вашей задачи</div>
+      <h2>Есть идея?<br>Давайте обсудим.</h2>
+      <p>Расскажите, что нужно вашему бизнесу.</p>
+    </div>
+    <a href="mailto:hello@example.com" class="btn btn-main">Написать нам ↗</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="logo">AI<span>.</span>WEB AGENCY</div>
+  <div>© 2026 · Digital solutions</div>
+</footer>
+</div>
+</body>
+</html>
